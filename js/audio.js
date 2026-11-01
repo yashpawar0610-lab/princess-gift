@@ -34,20 +34,69 @@ class RomanticAudio {
   }
 
   initAudioElement() {
-    // Check if custom romantic track exists
     const audio = new Audio();
+    // preload=auto tells the browser to buffer the full file aggressively
+    audio.preload = 'auto';
     audio.src = 'assets/music.mp3';
     audio.loop = true;
     audio.volume = this.volume;
+    this.audioElement = null;
+    this._audioReady = false;
 
+    // Fired when enough has been buffered to play all the way through without stopping
     audio.addEventListener('canplaythrough', () => {
+      this._audioReady = true;
       this.audioElement = audio;
+      // If the user already pressed play while it was loading, start now
+      if (this._pendingPlay) {
+        this._pendingPlay = false;
+        this._doPlay();
+      }
+      // Update button label from "Loading..." back to normal if not yet playing
+      const label = document.getElementById('musicStatusText');
+      if (label && !this.isPlaying) {
+        label.textContent = 'Play Perfect 🎵';
+      }
     });
 
-    audio.addEventListener('error', () => {
-      // Gracefully fall back to Web Audio synth if no custom mp3 file is provided
-      this.audioElement = null;
+    // Fired when playback stalls mid-song (network too slow)
+    audio.addEventListener('waiting', () => {
+      const label = document.getElementById('musicStatusText');
+      if (label && this.isPlaying) label.textContent = 'Buffering… ⏳';
     });
+
+    // Fired when enough data arrives to resume after a stall
+    audio.addEventListener('playing', () => {
+      const label = document.getElementById('musicStatusText');
+      if (label && this.isPlaying) label.textContent = 'Perfect Playing 🎵';
+    });
+
+    // Fallback to synth if file fails to load
+    audio.addEventListener('error', () => {
+      this.audioElement = null;
+      this._audioReady = false;
+      // If user was waiting for this, fall back to synth
+      if (this._pendingPlay) {
+        this._pendingPlay = false;
+        this._playSynth();
+      }
+    });
+
+    // Start buffering immediately in background
+    audio.load();
+  }
+
+  _doPlay() {
+    if (!this.audioElement) { this._playSynth(); return; }
+    this.audioElement.currentTime = 0;
+    this.audioElement.play().catch(() => this._playSynth());
+  }
+
+  _playSynth() {
+    this.playChordArpeggio();
+    this.intervalId = setInterval(() => {
+      if (this.isPlaying) this.playChordArpeggio();
+    }, 3800);
   }
 
   playTone(freq, time, duration, type = 'sine', gainVal = 0.15) {
@@ -183,21 +232,17 @@ class RomanticAudio {
     this.initContext();
     this.isPlaying = true;
 
-    if (this.audioElement) {
-      this.audioElement.play().catch(() => {
-        // Fallback to synth if audio element playback is blocked
-        this.playChordArpeggio();
-        this.intervalId = setInterval(() => {
-          if (this.isPlaying) this.playChordArpeggio();
-        }, 3800);
-      });
+    if (this._audioReady && this.audioElement) {
+      // Audio fully buffered — play immediately
+      this._doPlay();
+    } else if (this.audioElement === null && !this._pendingPlay) {
+      // File failed to load — fall back to synth immediately
+      this._playSynth();
     } else {
-      this.playChordArpeggio();
-      this.intervalId = setInterval(() => {
-        if (this.isPlaying) {
-          this.playChordArpeggio();
-        }
-      }, 3800);
+      // Still buffering — show loading state and auto-play once ready
+      this._pendingPlay = true;
+      const label = document.getElementById('musicStatusText');
+      if (label) label.textContent = 'Loading… ⏳';
     }
 
     this.updateVisualizer(true);
@@ -205,6 +250,7 @@ class RomanticAudio {
 
   stop() {
     this.isPlaying = false;
+    this._pendingPlay = false;
     if (this.audioElement) {
       this.audioElement.pause();
     }
