@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manjiri & Yash — Our Story in Pictures | To My Princess</title>
+  <meta name="description" content="An ultra-luxurious romantic tribute and interactive digital scrapbook for my one and only Princess, Manjiri.">
+  <meta name="theme-color" content="#09060e">
+
+  <!-- OpenGraph / Social Sharing Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Manjiri & Yash — Our Story in Pictures 💖">
+  <meta property="og:description" content="Every smile, every stolen glance, and every heartbeat that brought me to the most beautiful chapter of my life. To my one and only Princess, Manjiri.">
+  <meta property="og:image" content="assets/images/manjiri_pink_dress.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Manjiri & Yash — Our Story in Pictures">
+  <meta name="twitter:description" content="An ultra-luxurious romantic tribute and interactive digital scrapbook for my Princess.">
+  <meta name="twitter:image" content="assets/images/manjiri_pink_dress.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Luxury Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glow & Light Orbs -->
+  <div class="ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Interactive Floating Heart & Sparkle Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Floating Controls (Top Right) -->
+  <div class="floating-controls">
+    <!-- Music Player Toggle -->
+    <button id="musicToggleBtn" class="control-pill-btn" title="Toggle Romantic Melody">
+      <div class="audio-bars">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span id="musicStatusText">Play Perfect 🎵</span>
+    </button>
+
+    <!-- Love Shower Button -->
+    <button id="loveShowerBtn" class="control-pill-btn" title="Shower of Love">
+      <i class="fa-solid fa-heart" style="color: #e2a7a1;"></i>
+      <span>Love Shower</span>
+    </button>
+  </div>
+
+  <!-- Bottom Floating Quick Navigation -->
+  <nav class="floating-nav">
+    <a href="#hero" class="nav-link active"><i class="fa-solid fa-crown"></i> <span>Home</span></a>
+    <a href="#gallery" class="nav-link"><i class="fa-solid fa-images"></i> <span>Memories</span></a>
+    <a href="#timeline" class="nav-link"><i class="fa-solid fa-route"></i> <span>Milestones</span></a>
+    <a href="#whispers" class="nav-link"><i class="fa-solid fa-sparkles"></i> <span>Whispers</span></a>
+    <a href="#dreams" class="nav-link"><i class="fa-solid fa-compass"></i> <span>Bucket List</span></a>
+    <a href="#reasons" class="nav-link"><i class="fa-solid fa-heart-pulse"></i> <span>Why I Love You</span></a>
+    <a href="#letter" class="nav-link"><i class="fa-solid fa-envelope-open-text"></i> <span>Love Letter</span></a>
+    <a href="#infinity" class="nav-link"><i class="fa-solid fa-infinity"></i> <span>Forever</span></a>
+  </nav>
+
+  <!-- =========================================================
+       HERO MEMORY BANNER / CAROUSEL
+       ========================================================= -->
+  <header id="hero" class="hero-section">
+    <!-- Automated Crossfading Slideshow Background -->
+    <div class="hero-slider-bg">
+      <div class="hero-slide active" style="background-image: url('assets/images/manjiri_pink_dress.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('assets/images/manjiri_saree_purple.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('assets/images/manjiri_yellow_saree.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('assets/images/manjiri_green_kurti.jpg');"></div>
+    </div>
+    <div class="hero-slider-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badges-wrapper">
+        <div class="royal-crown-badge">
+          <i class="fa-solid fa-crown"></i>
+          <span>To My One & Only Princess</span>
+        </div>
+        <div class="hero-live-badge">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span id="heroDaysCounter">Days Together & Counting</span>
+        </div>
+      </div>
+
+      <h1 class="hero-title">
+        Manjiri & Yash
+        <span class="hero-script-tag">Our Story in Pictures</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Every smile, every stolen glance, and every heartbeat that brought me to the most beautiful chapter of my life.
+      </p>
+
+      <!-- Floating Romantic Quote Card -->
+      <div class="hero-quote-card">
+        <i class="fa-solid fa-quote-left"></i>
+        <div class="hero-quote-text">
+          "From that first day of Diwali when I first saw you, to holding your hand forever — you are my answered 11:11 prayer."
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#gallery" class="btn-primary">
+          <i class="fa-solid fa-book-heart"></i> Open Our Scrapbook
+        </a>
+        <a href="#letter" class="btn-secondary">
+          <i class="fa-solid fa-envelope"></i> Read My Heart Note
+        </a>
+      </div>
+    </div>
+
+    <!-- Carousel Indicator Dots -->
+    <div class="hero-slider-nav">
+      <div class="hero-dot active"></div>
+      <div class="hero-dot"></div>
+      <div class="hero-dot"></div>
+      <div class="hero-dot"></div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       SECTION 1: POLAROID & SCRAPBOOK GALLERY GRID
+       ========================================================= -->
+  <section id="gallery" class="section-wrapper">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-camera-retro"></i> Digital Scrapbook
+      </div>
+      <h2 class="section-title">Treasured Polaroids</h2>
+      <p class="section-desc">
+        Hover to feel each memory come alive in 3D. Click any polaroid to view the high-resolution frame and heartfelt caption.
+      </p>
+    </div>
+
+    <!-- Gallery Category Filters -->
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All Memories</button>
+      <button class="filter-btn" data-filter="milestones">Milestone Moments</button>
+      <button class="filter-btn" data-filter="traditional">Traditional Grace</button>
+      <button class="filter-btn" data-filter="candid">Candid & Playful</button>
+    </div>
+
+    <!-- Interactive Polaroid Grid (Rendered via js/script.js) -->
+    <div id="polaroidGrid" class="polaroid-grid"></div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 2: "OUR MILESTONES" INTERACTIVE TIMELINE
+       ========================================================= -->
+  <section id="timeline" class="section-wrapper">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-heart-pulse"></i> Our Journey
+      </div>
+      <h2 class="section-title">Milestones Along The Way</h2>
+      <p class="section-desc">
+        How an average guy fell hopelessly in love with the most gorgeous princess on this planet.
+      </p>
+    </div>
+
+    <div class="timeline-container">
+
+      <!-- Milestone 1 -->
+      <div class="milestone-item">
+        <div class="milestone-node"><i class="fa-solid fa-sparkles"></i></div>
+        <div class="milestone-card tilt-item">
+          <div class="milestone-card-top">
+            <span class="milestone-date-badge"><i class="fa-solid fa-calendar-star"></i> 22nd October 2025</span>
+            <span class="milestone-icon-tag"><i class="fa-solid fa-fire"></i> Diwali Spark</span>
+          </div>
+          <h3 class="milestone-title">First Sight — The Diwali Spark</h3>
+          <p class="milestone-memory-text">
+            The very first day of Diwali. The moment I first saw you, the world went completely silent. On that exact second, my heart skipped a beat and I fell instantly, irrevocably in love with you, my Princess.
+          </p>
+        </div>
+      </div>
+
+      <!-- Milestone 2 -->
+      <div class="milestone-item">
+        <div class="milestone-node"><i class="fa-solid fa-comments"></i></div>
+        <div class="milestone-card tilt-item">
+          <div class="milestone-card-top">
+            <span class="milestone-date-badge"><i class="fa-solid fa-comment-heart"></i> The Beginning</span>
+            <span class="milestone-icon-tag"><i class="fa-solid fa-message"></i> Daily Texts</span>
+          </div>
+          <h3 class="milestone-title">Sanchita's Topic & Everyday Texting</h3>
+          <p class="milestone-memory-text">
+            I admit it now—bringing up Sanchita's topic was purely my sneaky excuse just to find a reason to talk to you! What started with a small excuse turned into talking every single day, waiting eagerly for your replies, and smiling at my screen like an idiot.
+          </p>
+        </div>
+      </div>
+
+      <!-- Milestone 3 -->
+      <div class="milestone-item">
+        <div class="milestone-node"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="milestone-card tilt-item">
+          <div class="milestone-card-top">
+            <span class="milestone-date-badge"><i class="fa-solid fa-map-pin"></i> First Time Together</span>
+            <span class="milestone-icon-tag"><i class="fa-solid fa-heart-crack-pulse"></i> Butterflies</span>
+          </div>
+          <h3 class="milestone-title">Dadar & Nervous Butterflies</h3>
+          <p class="milestone-memory-text">
+            When we were first together at Dadar, my heart was racing so fast! I was genuinely nervous walking beside this effortlessly 11/10, most beautiful, and cutest girl on earth. An average guy like me couldn't believe his luck walking next to his princess.
+          </p>
+        </div>
+      </div>
+
+      <!-- Milestone 4 -->
+      <div class="milestone-item">
+        <div class="milestone-node"><i class="fa-solid fa-cake-candles"></i></div>
+        <div class="milestone-card tilt-item">
+          <div class="milestone-card-top">
+            <span class="milestone-date-badge"><i class="fa-solid fa-cake-candles"></i> 31st August 2026</span>
+            <span class="milestone-icon-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> 11:11 Wish</span>
+          </div>
+          <h3 class="milestone-title">Your Birthday & The 11:11 Wish</h3>
+          <p class="milestone-memory-text">
+            From wishing you right at midnight (12:00 AM) to the breath-stopping moment I saw you in that gorgeous pink dress. Spending the entire rest of the day with you felt like my ultimate 11:11 wish had actually come true right in front of my eyes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Milestone 5 -->
+      <div class="milestone-item">
+        <div class="milestone-node"><i class="fa-solid fa-ring"></i></div>
+        <div class="milestone-card tilt-item">
+          <div class="milestone-card-top">
+            <span class="milestone-date-badge"><i class="fa-solid fa-heart"></i> 6th September 2026</span>
+            <span class="milestone-icon-tag"><i class="fa-solid fa-ring"></i> The Proposal</span>
+          </div>
+          <h3 class="milestone-title">The Proposal — The Riskiest Step</h3>
+          <p class="milestone-memory-text">
+            The day I gathered all my courage to take the riskiest, yet most beautiful step of my life: proposing to you. In those few seconds, my entire life felt frozen in time, holding my breath until that magical word came: <strong>"YES"</strong>. That single word made me the happiest soul alive.
+          </p>
+        </div>
+      </div>
+
+      <!-- Milestone 6 -->
+      <div class="milestone-item">
+        <div class="milestone-node"><i class="fa-solid fa-infinity"></i></div>
+        <div class="milestone-card tilt-item">
+          <div class="milestone-card-top">
+            <span class="milestone-date-badge"><i class="fa-solid fa-infinity"></i> Till My Last Breath</span>
+            <span class="milestone-icon-tag"><i class="fa-solid fa-hand-holding-heart"></i> Sacred Promise</span>
+          </div>
+          <h3 class="milestone-title">Holding Hands Forever</h3>
+          <p class="milestone-memory-text">
+            Holding the prettiest girl's hand and making a sacred promise to hold it firmly till my last breath. I want to spend my youth with you, marry you, have the cutest babies, grow gray and old together, and even on my death bed, be holding your hand.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 2.5: "OUR LOVE WHISPERS" INTERACTIVE JAR
+       ========================================================= -->
+  <section id="whispers" class="section-wrapper whispers-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-sparkles"></i> Daily Whispers
+      </div>
+      <h2 class="section-title">Our Love Whispers Jar</h2>
+      <p class="section-desc">
+        Tap the magical crystal jar or click the button below to draw an intimate thought, confession, or promise from Yash.
+      </p>
+    </div>
+
+    <div class="whisper-container">
+      <!-- Magical Glowing Jar Visual -->
+      <div id="loveJarGraphic" class="love-jar-graphic" title="Tap to shake the love jar">
+        <div class="jar-lid"></div>
+        <div class="jar-body">
+          <div class="jar-hearts-inside">
+            <span class="j-heart j-h1"><i class="fa-solid fa-heart"></i></span>
+            <span class="j-heart j-h2"><i class="fa-solid fa-heart"></i></span>
+            <span class="j-heart j-h3"><i class="fa-solid fa-heart"></i></span>
+            <span class="j-sparkle"><i class="fa-solid fa-sparkles"></i></span>
+          </div>
+          <div class="jar-label-wrap">
+            <span>Yash & Manjiri</span>
+          </div>
+        </div>
+        <div class="jar-glow"></div>
+      </div>
+
+      <!-- Display Card -->
+      <div class="whisper-card tilt-item">
+        <div class="whisper-header-bar">
+          <span id="whisperIndexTag" class="badge-tag"><i class="fa-solid fa-heart"></i> Whisper #1 of 14</span>
+          <span class="whisper-hint"><i class="fa-solid fa-hand-pointer"></i> Infinite draws</span>
+        </div>
+        <div class="whisper-quote-box">
+          <i class="fa-solid fa-quote-left quote-icon-left"></i>
+          <p id="whisperQuoteText" class="whisper-text">
+            "You're not just my girl; you're the answered prayer I whisper every time the clock strikes 11:11."
+          </p>
+        </div>
+        <button id="pickWhisperBtn" class="btn-primary whisper-draw-btn">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Pick Another Whisper 💌
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 3: "MY FOREVER BUCKET LIST TO FULFILL WITH YOU" INTERACTIVE DREAMS
+       ========================================================= -->
+  <section id="dreams" class="section-wrapper">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-compass"></i> Our Future Journey
+      </div>
+      <h2 class="section-title">My Forever Bucket List To Fulfill With You</h2>
+      <p class="section-desc">
+        The little dreams, quiet adventures, and sacred moments waiting for us to live together. Tap any dream to seal our promise.
+      </p>
+    </div>
+
+    <div class="dreams-grid">
+      <!-- Dream 1 -->
+      <div class="dream-card tilt-item" data-dream-id="1">
+        <div class="dream-card-header">
+          <div class="dream-icon-circle"><i class="fa-solid fa-car-side"></i></div>
+          <span class="dream-tag">Dream 01</span>
+        </div>
+        <h3 class="dream-title">Midnight Chai & Long Drive</h3>
+        <p class="dream-desc">
+          Windows rolled all the way down, the cool night breeze in your hair, our favorite songs on repeat, and stopping at a quiet roadside stall for warm chai at 2:00 AM.
+        </p>
+        <div class="dream-footer">
+          <button class="stamp-promise-btn" title="Click to seal this promise">
+            <i class="fa-regular fa-heart"></i> <span>Seal Our Promise</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dream 2 -->
+      <div class="dream-card tilt-item" data-dream-id="2">
+        <div class="dream-card-header">
+          <div class="dream-icon-circle"><i class="fa-solid fa-moon"></i></div>
+          <span class="dream-tag">Dream 02</span>
+        </div>
+        <h3 class="dream-title">Stargazing on a Silent Hilltop</h3>
+        <p class="dream-desc">
+          Wrapped together in one thick oversized blanket, shivering just a little, watching shooting stars and whispering our deepest secrets until dawn breaks.
+        </p>
+        <div class="dream-footer">
+          <button class="stamp-promise-btn" title="Click to seal this promise">
+            <i class="fa-regular fa-heart"></i> <span>Seal Our Promise</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dream 3 -->
+      <div class="dream-card tilt-item" data-dream-id="3">
+        <div class="dream-card-header">
+          <div class="dream-icon-circle"><i class="fa-solid fa-utensils"></i></div>
+          <span class="dream-tag">Dream 03</span>
+        </div>
+        <h3 class="dream-title">Messy 2:00 AM Kitchen Date</h3>
+        <p class="dream-desc">
+          Flour on your nose, burning half the pancakes, listening to soft indie music in socks, and laughing uncontrollably in our kitchen while trying to cook.
+        </p>
+        <div class="dream-footer">
+          <button class="stamp-promise-btn" title="Click to seal this promise">
+            <i class="fa-regular fa-heart"></i> <span>Seal Our Promise</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dream 4 -->
+      <div class="dream-card tilt-item" data-dream-id="4">
+        <div class="dream-card-header">
+          <div class="dream-icon-circle"><i class="fa-solid fa-water"></i></div>
+          <span class="dream-tag">Dream 04</span>
+        </div>
+        <h3 class="dream-title">Sunset by the Secluded Ocean</h3>
+        <p class="dream-desc">
+          Walking barefoot on cold wet sand, your fingers warmly interlaced with mine, watching the evening sky turn into gold and blush pink as the waves roll in.
+        </p>
+        <div class="dream-footer">
+          <button class="stamp-promise-btn" title="Click to seal this promise">
+            <i class="fa-regular fa-heart"></i> <span>Seal Our Promise</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dream 5 -->
+      <div class="dream-card tilt-item" data-dream-id="5">
+        <div class="dream-card-header">
+          <div class="dream-icon-circle"><i class="fa-solid fa-om"></i></div>
+          <span class="dream-tag">Dream 05</span>
+        </div>
+        <h3 class="dream-title">Diwali Puja as Husband & Wife</h3>
+        <p class="dream-desc">
+          Dressed in matching traditional attire, sitting together in front of the sacred flame, catching your eye across the room and knowing our story came true.
+        </p>
+        <div class="dream-footer">
+          <button class="stamp-promise-btn" title="Click to seal this promise">
+            <i class="fa-regular fa-heart"></i> <span>Seal Our Promise</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dream 6 -->
+      <div class="dream-card tilt-item" data-dream-id="6">
+        <div class="dream-card-header">
+          <div class="dream-icon-circle"><i class="fa-solid fa-house-chimney-heart"></i></div>
+          <span class="dream-tag">Dream 06</span>
+        </div>
+        <h3 class="dream-title">Building Our Cozy Little World</h3>
+        <p class="dream-desc">
+          A home filled with fairy lights, our little plants on the balcony, lazy Sunday coffee in bed, and growing beautifully wrinkled and gray side by side.
+        </p>
+        <div class="dream-footer">
+          <button class="stamp-promise-btn" title="Click to seal this promise">
+            <i class="fa-regular fa-heart"></i> <span>Seal Our Promise</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 4: "REASONS WHY I LOVE YOU" 3D FLIP CARDS
+       ========================================================= -->
+  <section id="reasons" class="section-wrapper">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-heart-circle-check"></i> Pure Devotion
+      </div>
+      <h2 class="section-title">Reasons Why I Love You</h2>
+      <p class="section-desc">
+        Click each card to flip and read why you mean the entire universe to me.
+      </p>
+    </div>
+
+    <div class="reasons-grid">
+      <!-- Reason 1 -->
+      <div class="reason-flip-card">
+        <div class="reason-flip-inner">
+          <div class="reason-front">
+            <div class="reason-num">01</div>
+            <h3>Your Effortless 11/10 Beauty</h3>
+            <span>(Click to flip)</span>
+          </div>
+          <div class="reason-back">
+            <p>From your cute mischievous expressions in the car to when you dress up in traditional sarees, you are breathtaking in every single mood.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 2 -->
+      <div class="reason-flip-card">
+        <div class="reason-flip-inner">
+          <div class="reason-front">
+            <div class="reason-num">02</div>
+            <h3>How You Make Me Feel</h3>
+            <span>(Click to flip)</span>
+          </div>
+          <div class="reason-back">
+            <p>Even though I feel like an ordinary guy, the way you smile at me makes me feel like the luckiest king alive.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 3 -->
+      <div class="reason-flip-card">
+        <div class="reason-flip-inner">
+          <div class="reason-front">
+            <div class="reason-num">03</div>
+            <h3>That Contagious Laugh</h3>
+            <span>(Click to flip)</span>
+          </div>
+          <div class="reason-back">
+            <p>When you scrunch your nose and laugh teasingly, all my anxieties disappear. That laugh is my absolute favorite sound on earth.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 4 -->
+      <div class="reason-flip-card">
+        <div class="reason-flip-inner">
+          <div class="reason-front">
+            <div class="reason-num">04</div>
+            <h3>Your Warm & Pure Heart</h3>
+            <span>(Click to flip)</span>
+          </div>
+          <div class="reason-back">
+            <p>From everyday texts to deep conversations, your kindness and pure soul are what make you truly my one and only Princess.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 5 -->
+      <div class="reason-flip-card">
+        <div class="reason-flip-inner">
+          <div class="reason-front">
+            <div class="reason-num">05</div>
+            <h3>The Way You Said "Yes"</h3>
+            <span>(Click to flip)</span>
+          </div>
+          <div class="reason-back">
+            <p>On that 6th of September, when you answered my proposal with that sweet 'Yes', you gave my entire life its purpose.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 6 -->
+      <div class="reason-flip-card">
+        <div class="reason-flip-inner">
+          <div class="reason-front">
+            <div class="reason-num">06</div>
+            <h3>The Future We Are Building</h3>
+            <span>(Click to flip)</span>
+          </div>
+          <div class="reason-back">
+            <p>Spending our youth together, getting married, having cute babies, growing old together, and holding hands forever.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 5: INTERACTIVE LOVE NOTE ENVELOPE
+       ========================================================= -->
+  <section id="letter" class="section-wrapper envelope-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-feather-pointed"></i> Handcrafted For You
+      </div>
+      <h2 class="section-title">My Heart Note To You</h2>
+      <p class="section-desc">
+        Click the golden wax seal below to open the envelope and unfold the letter written straight from my soul.
+      </p>
+    </div>
+
+    <div id="envelopePrompt" class="envelope-prompt-text">
+      <i class="fa-solid fa-sparkles"></i> Click wax seal to unfold Yash's heart letter ✨
+    </div>
+
+    <!-- 3D Realistic Envelope -->
+    <div id="romanticEnvelope" class="envelope-wrapper">
+      <div class="envelope-body">
+        <!-- Foldable Flap -->
+        <div class="envelope-flap"></div>
+
+        <!-- Golden Monogram Wax Seal -->
+        <div id="waxSeal" class="wax-seal" title="Click to break seal & open letter">
+          <span class="wax-initials">M & Y</span>
+        </div>
+
+        <!-- Sliding Parchment Letter -->
+        <article class="letter-paper">
+          <header class="letter-header">
+            <h3 class="letter-greeting">My Dearest Princess Manjiri,</h3>
+            <div class="letter-date">Written with eternal devotion</div>
+          </header>
+
+          <div class="letter-content">
+            <p>
+              I don't think ordinary words will ever be large enough to hold everything you mean to me, but I wanted to write this letter so you can carry it with you whenever you need a reminder of how deeply, endlessly you are adored.
+            </p>
+            <p>
+              Before you came into my life, my days were just ordinary routines. But the moment you stepped into my world, you brought warmth, color, and a sense of belonging I never knew I was searching for. You have this rare, effortless magic about you—the kindness in your voice, the peace that settles over me whenever I'm beside you, and that gorgeous, pure smile that makes all the noise of the outside world simply disappear.
+            </p>
+            <p>
+              With you, I never have to pretend to be anyone else. You make me feel seen, cherished, and inspired to be the best man I can possibly be. Loving you is the easiest, most natural choice I make every single morning. It's in the quiet prayers I say for your happiness, in the smile that creeps up on my face whenever your name lights up my screen, and in the overwhelming gratitude I feel every time your hand is wrapped inside mine.
+            </p>
+            <p>
+              My promise to you isn't just for the sunny, easy days. I promise to stand beside you through every thunderstorm, to hold you tight whenever you feel uncertain, to celebrate every dream you pursue, and to guard your gentle heart with everything I have.
+            </p>
+            <p>
+              You are my sanctuary, my best friend, and my whole universe. I choose you today, I will choose you tomorrow, and I will keep choosing you for every tomorrow that follows.
+            </p>
+          </div>
+
+          <footer class="letter-signature">
+            <p style="font-family: var(--font-serif); font-size: 0.9rem; color: #555;">Forever & Always Yours,</p>
+            <div class="letter-sig-text">Yash ❤️</div>
+            <div class="letter-keepsake-action">
+              <button id="downloadLetterBtn" class="letter-keepsake-btn" title="Save this letter as a keepsake">
+                <i class="fa-solid fa-print"></i> Print / Save Keepsake
+              </button>
+            </div>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 6: FUTURE COUNTDOWN & "TO INFINITY & BEYOND"
+       ========================================================= -->
+  <section id="infinity" class="infinity-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-infinity"></i> Our Forever Counter
+      </div>
+      <h2 class="section-title">To Infinity & Beyond</h2>
+      <p class="section-desc">
+        Counting every precious second since 6th September 2026 when you said YES and we became officially forever.
+      </p>
+    </div>
+
+    <!-- Live Counter Grid -->
+    <div class="counter-grid">
+      <div class="counter-box">
+        <div id="countDays" class="counter-val">00</div>
+        <div class="counter-label">Days</div>
+      </div>
+      <div class="counter-box">
+        <div id="countHours" class="counter-val">00</div>
+        <div class="counter-label">Hours</div>
+      </div>
+      <div class="counter-box">
+        <div id="countMins" class="counter-val">00</div>
+        <div class="counter-label">Minutes</div>
+      </div>
+      <div class="counter-box">
+        <div id="countSecs" class="counter-val">00</div>
+        <div class="counter-label">Seconds</div>
+      </div>
+    </div>
+
+    <!-- Infinity Promise Card -->
+    <div class="infinity-promise-card tilt-item">
+      <h3>"You Are My Forever & Always"</h3>
+      <p>
+        From our youth to our gray hairs, through every high and every quiet night. Every second that passes is another second I fall deeper in love with you, Princess.
+      </p>
+    </div>
+
+    <!-- Interactive Heart Reaction Button -->
+    <div class="send-heart-interaction">
+      <button id="sendHeartBtn" class="btn-primary" style="font-size: 1.05rem; padding: 16px 36px;">
+        <i class="fa-solid fa-heart-pulse"></i> Send A Heart To Princess (<span id="heartsSentCount">1000</span>)
+      </button>
+      <span style="font-size: 0.85rem; color: var(--text-muted);">Click to shower the screen with love & celebration!</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       LIGHTBOX VIEWER MODAL
+       ========================================================= -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <div class="lightbox-close" id="lightboxClose" title="Close Viewer">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    
+    <div class="lightbox-nav-btn lightbox-prev" id="lightboxPrev" title="Previous Photo">
+      <i class="fa-solid fa-chevron-left"></i>
+    </div>
+    <div class="lightbox-nav-btn lightbox-next" id="lightboxNext" title="Next Photo">
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <div class="lightbox-content">
+      <div class="lightbox-image-box">
+        <img id="lightboxImg" src="" alt="Memory in focus" />
+      </div>
+
+      <div class="lightbox-details">
+        <div>
+          <div class="lightbox-badges">
+            <span class="badge-tag"><i class="fa-regular fa-calendar-heart"></i> <span id="lightboxDate"></span></span>
+            <span class="badge-tag"><i class="fa-solid fa-location-dot"></i> <span id="lightboxLocation"></span></span>
+          </div>
+
+          <h3 id="lightboxTitle" class="lightbox-title"></h3>
+          <p id="lightboxCaption" class="lightbox-caption-body"></p>
+        </div>
+
+        <div class="lightbox-footer">
+          <span id="lightboxCounter" class="lightbox-counter">1 / 9</span>
+          <button id="lightboxHeartBtn" class="heart-reaction-btn">
+            <i class="fa-solid fa-heart"></i> <span>Cherish This</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       ROMANTIC FOOTER
+       ========================================================= -->
+  <footer class="romantic-footer">
+    <div class="footer-names">Manjiri & Yash</div>
+    <div class="footer-quote">"Made with ❤️ forever and always for my Princess."</div>
+    <div class="footer-copy">
+      © September 2026 – Eternity | Crafted with eternal love for Manjiri
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
